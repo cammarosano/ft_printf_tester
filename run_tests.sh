@@ -20,13 +20,11 @@ counter=$2
 func=printf
 gcc $gcc_flags -I $includes -D FORMAT="$format" -D FUNC=$func -o test_libc main_test.c -lm
 ./test_libc > output_libc 2>&1
-#echo "" >> output_libc
 
 # compile main with ft_printf and store output in a file
 func=ft_printf
 gcc $gcc_flags -I $includes -D FORMAT="$format" -D FUNC=$func -o test_ft main_test.c -L $path -lftprintf -lm
 ./test_ft > output_ft 2>&1
-#echo "" >> output_ft
 
 # store outputs in all_outputs file
 echo "test $counter:" >> all_outputs
@@ -36,6 +34,7 @@ cat output_libc >> all_outputs
 echo "--- " >> all_outputs
 echo "ft_printf: " >> all_outputs
 cat output_ft >> all_outputs
+echo "" >> all_outputs
 echo "----------------------------- " >> all_outputs
 
 # compare outputs with diff and store in diff_log
@@ -47,7 +46,6 @@ comp_value=$?
 # if different (test fail), display outputs
 if [ $comp_value -eq 1 ]
 then
-	echo "----------------------------- "
 	echo "test $counter: FAIL"
 	echo "format, args: $format"
 	echo "libc printf: "
@@ -55,6 +53,7 @@ then
 	echo "--- "
 	echo "ft_printf: "
 	cat output_ft
+	echo ""
 	echo "----------------------------- "
 else
 	echo "test $counter: OK"
@@ -83,3 +82,10 @@ do
 	test_compare "$i" $counter
 	let "counter++"
 done < ./$tests_file
+
+#delete temporary output files
+rm -f output_libc output_ft test_ft test_libc
+
+# clean ft_printf directory
+# make fclean -C $path
+
