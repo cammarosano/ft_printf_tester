@@ -18,12 +18,12 @@ counter=$2
 
 # compile main with libc printf and store output in a file
 func=printf
-gcc $gcc_flags -I $includes -D FORMAT="$format" -D FUNC=$func -o test_libc main_test.c -lm
+gcc $gcc_flags -I $includes -D FORMAT="$format" -D FUNC=$func -o test_libc srcs/main_test.c -lm
 ./test_libc > output_libc 2>&1
 
 # compile main with ft_printf and store output in a file
 func=ft_printf
-gcc $gcc_flags -I $includes -D FORMAT="$format" -D FUNC=$func -o test_ft main_test.c -L $path -lftprintf -lm
+gcc $gcc_flags -I $includes -D FORMAT="$format" -D FUNC=$func -o test_ft srcs/main_test.c -L $path -lftprintf -lm
 ./test_ft > output_ft 2>&1
 
 # store outputs in all_outputs file

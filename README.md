@@ -9,7 +9,8 @@ $ `bash run_test.sh`
 
 To run your/other tests, change **test_file** variable.
 
-For the detailed results of all tests, check *all_outputs* file.
+For the detailed results of all tests, check *all_outputs* file. The outputs of diff are avaible at *diff_log*.
 
-The outputs of diff are avaible at *diff_log*.
+Memory test:
 
+$ `bash memory_tester.sh`
