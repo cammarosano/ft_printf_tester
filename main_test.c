@@ -12,7 +12,7 @@ int	main(void)
 	wstr[6] = 0x0990;
 	int n = 0;
 
-	//setlocale(LC_ALL, "fr_BE.utf8");
+	setlocale(LC_ALL, "be_BY.UTF-8");
 	ret = FUNC(FORMAT);
 	printf("\nreturn value: %d\n", ret);
 	return (0);
