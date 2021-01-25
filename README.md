@@ -1,5 +1,9 @@
 # ft_printf_tester
 
-Update **path**, **includes** and **test_file** variables in run_test.sh.
+Clone this no-matter where.
+
+Update **path**, **includes** variables in run_test.sh. 
 
 $ `bash run_test.sh`
+
+To run your/other tests, change **test_file** variable.

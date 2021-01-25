@@ -1,10 +1,15 @@
 #!/bin/bash
 
-path=~/projects_19/ft_printf
+# update the following variables before running the script
+path=../ft_printf
 includes=$path/includes
+
 tests_file=mandatory_conversions
-gcc_flags="-Wno-format"
+#other tests:
 #tests_file=bonus_conversions
+#tests_file=undef_behavior_conversions
+
+gcc_flags="-Wno-format"
 
 function test_compare
 {
