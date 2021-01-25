@@ -1,0 +1,4 @@
+"INDUCING SEGFAULT"
+"expecting a string: %s , but arg is just an int", 'a'
+"TESTING UNDEFINED BEHAVIORS"
+"%w %c \\n", 48

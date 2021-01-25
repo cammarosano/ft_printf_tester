@@ -1,0 +1,37 @@
+"TESTING CHAR CONVERSIONS"
+"%c", 'a'
+"%4c", 'b'
+"%*c", 4, 'b'
+"%-3c", 'c'
+"%03c", '&'
+"%0-3c", '&'
+"%03.2c", '&'
+"%c", 150
+"%c", 0
+"%4c", 0
+"%04c", 0
+"some text %-3c some other text", '&'
+"something... %5c and something else", 256
+"something... %5c and something else", 0
+"something... %-5c and something else", 0
+"*%c*", 0
+"TESTING STRING CONVERSIONS"
+"%s", "ho\\000la"
+"*%5.3s*", "hola"
+"*%-5.3s*", "hola"
+"%.5s", str
+""
+"TESTING INTEGER CONVERSIONS"
+"*%d**%4d**%04d**%-04d**%-04.013d**%05.3d**%05d*", 50, 0, 50, 50, 50, -50, -50
+"%i %i", 2147483647, -2147483648
+"%05.d", 0
+"*%u", 50);
+"*%4u", 178);
+"*%04u", 178);
+"*%-5.2u", 178);
+"%x", 0xff82
+"%x", 0
+"%.x", 0
+"%.o", 0
+"TESTING %% CONVERSION"
+"percentage sign: %04% !"
